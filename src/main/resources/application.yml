@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: APPLICATION-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sunilawssetup/swiggy-app-config.git
+          clone-on-start: true
+          default-label: main
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 9097
+
